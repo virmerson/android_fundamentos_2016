@@ -19,6 +19,8 @@ public class CicloDeVidaActivity  extends AppCompatActivity{
         setContentView(R.layout.ciclodevida);
         Log.i(TAG, "Chamou On Create...");
 
+
+
     }
 
 

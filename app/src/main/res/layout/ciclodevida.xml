@@ -6,4 +6,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tela Ciclo de VIDA" />
+
+
+    <Button
+        android:text="@string/fechar"
+        android:id="@+id/btn_ciclo_fechar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>

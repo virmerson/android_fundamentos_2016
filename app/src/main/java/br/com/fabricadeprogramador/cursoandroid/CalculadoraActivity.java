@@ -7,12 +7,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class CalculadoraActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.calculadora);
 
 
 
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
                 //Verificando se o texto está vazio
                 if (strN1.isEmpty() || strN2.isEmpty()){
-                    Toast.makeText(MainActivity.this, "Insira dados", Toast.LENGTH_LONG).show();
+                    Toast.makeText(CalculadoraActivity.this, "Insira dados", Toast.LENGTH_LONG).show();
                 }else {
 
                     //Faz o calculo
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
                     Double soma = n1 + n2;
 
-                    Toast.makeText(MainActivity.this, "A soma é:" + soma, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CalculadoraActivity.this, "A soma é:" + soma, Toast.LENGTH_SHORT).show();
                 }
 
             }

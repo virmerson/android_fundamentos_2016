@@ -4,23 +4,31 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by Virmerson on 10/1/16.
  */
 public class CicloDeVidaActivity  extends AppCompatActivity{
-
-
     private static final String TAG = "Ciclo de Vida";
+
+    @OnClick(R.id.btn_ciclo_fechar)
+    public void fechar(){
+        Log.i(TAG, "Clicou botao fechar");
+        finish();
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+       //Ativar Butter pra activity
         setContentView(R.layout.ciclodevida);
         Log.i(TAG, "Chamou On Create...");
-
-
-
+        ButterKnife.bind(this);
     }
 
 

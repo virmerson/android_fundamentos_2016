@@ -11,13 +11,44 @@ import android.util.Log;
 public class CicloDeVidaActivity  extends AppCompatActivity{
 
 
-    private static final String TAG = "CicloDeVidaActivity";
+    private static final String TAG = "Ciclo de Vida";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ciclodevida);
-        Log.i(TAG, "onCreate...");
+        Log.i(TAG, "Chamou On Create...");
 
+    }
+
+
+    @Override
+    protected void onStart() {
+        Log.i(TAG, "Chamou On Start...");
+        super.onStart();
+    }
+
+    @Override
+    protected void onDestroy() {
+        Log.i(TAG, "Chamou On Destroy...");
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onPause() {
+        Log.i(TAG, "Chamou On Pause...");
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        Log.i(TAG, "Chamou On Resume...");
+        super.onResume();
+    }
+
+    @Override
+    protected void onStop() {
+        Log.i(TAG, "Chamou On Stop...");
+        super.onStop();
     }
 }

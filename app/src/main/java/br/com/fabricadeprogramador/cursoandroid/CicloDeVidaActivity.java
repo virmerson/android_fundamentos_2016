@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -15,6 +16,8 @@ import butterknife.OnClick;
  */
 public class CicloDeVidaActivity  extends AppCompatActivity{
     private static final String TAG = "Ciclo de Vida";
+
+
 
     @OnClick(R.id.btn_ciclo_fechar)
     public void fechar(){
@@ -29,6 +32,29 @@ public class CicloDeVidaActivity  extends AppCompatActivity{
         setContentView(R.layout.ciclodevida);
         Log.i(TAG, "Chamou On Create...");
         ButterKnife.bind(this);
+
+       int flag =  getIntent().getFlags();
+        if (flag==Flags.INTENT_MENU) {
+            if (getIntent().getExtras() != null) {
+                Bundle bundle = getIntent().getExtras();
+
+                String nome = bundle.getString("nome");
+                int idade = bundle.getInt("idade");
+
+                String nomeIdad = nome + " "+ idade;
+                bundle.putString("nomeidade", nomeIdad);
+
+                Toast.makeText(CicloDeVidaActivity.this, "Nome:" + nome + " Idade:" + idade, Toast.LENGTH_SHORT).show();
+
+
+            }
+        }else if (flag==Flags.INTENT_CALC){
+            Toast.makeText(CicloDeVidaActivity.this, "Me chamou da Calculadora", Toast.LENGTH_SHORT).show();
+
+        }
+
+
+        //
     }
 
 

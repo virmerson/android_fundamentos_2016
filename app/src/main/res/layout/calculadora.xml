@@ -39,5 +39,13 @@
         />
 
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btncalc_irciclo"
+        android:text="Ir para Ciclo de Vida"
+        />
+
+
 
 </LinearLayout>

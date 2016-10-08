@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 /**
  * Created by Virmerson on 9/24/16.
@@ -29,7 +30,13 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Carregar uma nova tela
                 Intent irParaCiclo = new Intent(MenuActivity.this, CicloDeVidaActivity.class);
-                startActivity(irParaCiclo);
+
+                irParaCiclo.putExtra("nome", "Virmerson");
+                irParaCiclo.putExtra("idade", 35);
+                irParaCiclo.addFlags(Flags.INTENT_MENU);
+
+
+                startActivityForResult(irParaCiclo, 1);
 
             }
         });
@@ -41,7 +48,7 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent irParaCalc = new Intent(MenuActivity.this, CalculadoraActivity.class);
-                startActivity(irParaCalc);
+                startActivityForResult(irParaCalc, 2);
             }
         });
 
@@ -76,5 +83,19 @@ public class MenuActivity extends AppCompatActivity {
     protected void onStop() {
         Log.i(TAG, "Chamou On Stop...");
         super.onStop();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode==1){
+            String nomeIdade = data.getExtras().getString("nomeidade");
+
+            Toast.makeText(MenuActivity.this, "Resultado da Activity Ciclo : " + nomeIdade, Toast.LENGTH_SHORT).show();
+        }
+
+        if (requestCode==2){
+            Toast.makeText(MenuActivity.this, "Resultado da Activity Calc", Toast.LENGTH_SHORT).show();
+        }
     }
 }

@@ -1,5 +1,6 @@
 package br.com.fabricadeprogramador.cursoandroid;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,8 +17,20 @@ public class CalculadoraActivity extends AppCompatActivity {
 
 
 
+
+
         Button b =  (Button) findViewById(R.id.btnCalc);
 
+        Button irCiclo =  (Button) findViewById(R.id.btncalc_irciclo);
+
+        irCiclo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent irParaCiclo =  new Intent(CalculadoraActivity.this, CicloDeVidaActivity.class);
+                irParaCiclo.setFlags(Flags.INTENT_CALC);
+                startActivity(irParaCiclo);
+            }
+        });
 
         b.setOnClickListener(new View.OnClickListener() {
             @Override

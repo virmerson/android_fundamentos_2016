@@ -2,5 +2,6 @@
     <string name="app_name">CursoAndroid</string>
     <string name="fechar">FECHAR</string>
     <string name="numero_1">Número 1:</string>
+    <string name="title_activity_lista_usuarios">Lista de Usuarios</string>
 
 </resources>
